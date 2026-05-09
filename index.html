@@ -9,6 +9,9 @@
 <meta property="og:description" content="Three bottlenecks I noticed on our call, plus the exact build that fixes them. For RedHoek+ raises, not generic real estate marketing.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://andrei170.github.io/lee-cohen-demo/">
+<meta property="og:image" content="https://static.wixstatic.com/media/00a302_9bd80c90fa46465f93aaf286f88c5208~mv2.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://static.wixstatic.com/media/00a302_9bd80c90fa46465f93aaf286f88c5208~mv2.jpg">
 <link rel="canonical" href="https://andrei170.github.io/lee-cohen-demo/">
 <meta name="theme-color" content="#0d0d0d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,8 +93,10 @@
 
   /* HERO */
   .hero{position:relative;background:linear-gradient(135deg,var(--noir-deep) 0%,var(--noir) 50%,#1a0a08 100%);color:var(--cream);padding:170px 0 110px;overflow:hidden}
-  .hero::before{content:'';position:absolute;top:-30%;right:-15%;width:65%;height:130%;background:radial-gradient(circle,rgba(91,34,27,0.32) 0%,transparent 60%);pointer-events:none}
-  .hero::after{content:'';position:absolute;bottom:-50%;left:-15%;width:55%;height:100%;background:radial-gradient(circle,rgba(91,34,27,0.18) 0%,transparent 55%);pointer-events:none}
+  .hero-bg-image{position:absolute;inset:0;background-image:url('https://static.wixstatic.com/media/00a302_9bd80c90fa46465f93aaf286f88c5208~mv2.jpg');background-size:cover;background-position:center;opacity:0.32;mix-blend-mode:luminosity;pointer-events:none;z-index:1}
+  .hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,13,13,0.82) 0%,rgba(13,13,13,0.65) 50%,rgba(26,10,8,0.78) 100%);pointer-events:none;z-index:1}
+  .hero::before{content:'';position:absolute;top:-30%;right:-15%;width:65%;height:130%;background:radial-gradient(circle,rgba(91,34,27,0.32) 0%,transparent 60%);pointer-events:none;z-index:1}
+  .hero::after{content:'';position:absolute;bottom:-50%;left:-15%;width:55%;height:100%;background:radial-gradient(circle,rgba(91,34,27,0.18) 0%,transparent 55%);pointer-events:none;z-index:1}
   .hero-inner{position:relative;z-index:2}
   .hero-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border:1px solid rgba(91,34,27,0.55);border-radius:100px;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--oxblood-bright);margin-bottom:32px;background:rgba(91,34,27,0.12)}
   .hero-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--oxblood-bright);animation:pulse 2.4s ease-in-out infinite}
@@ -290,11 +295,13 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg-image" aria-hidden="true"></div>
+  <div class="hero-bg-overlay" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-pill"><span class="dot"></span> Built for Lee at RedHoek+ &middot; Not a template</div>
       <h1>The back end is built. <em>The front end is empty.</em></h1>
-      <p class="sub">RedHoek+ already runs the back end of an investor funnel: accreditation flow, software-routed packages, quarterly distributions. <strong>What is missing is the front end</strong>, the targeted PE / family-office sequence that fills it. <strong>One yes funds $10M+ of a raise. Zero in the pipeline today.</strong> That is the gap, and it is the only one that matters.</p>
+      <p class="sub">RedHoek+ already runs the back end of an investor funnel: accreditation flow, software-routed packages, quarterly distributions. <strong>What is missing is the front end</strong>, the targeted PE / family-office sequence that fills it. <strong>1–3 yeses fund a $10–20M raise. Zero pipeline today.</strong> That is the gap, and it is the only one that matters.</p>
       <div class="hero-cta-group">
         <a href="#apply" class="cta-primary">Book Call 2 With Andrei <span class="arrow">→</span></a>
         <a href="#bottlenecks" class="cta-secondary">See the three bottlenecks first</a>
@@ -302,16 +309,16 @@
 
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-num">1 yes</div>
-          <div class="hero-stat-label">Funds $10M+ Of A Raise</div>
+          <div class="hero-stat-num">1–3 yeses</div>
+          <div class="hero-stat-label">Fund A $10–20M Raise</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-num">20–50</div>
           <div class="hero-stat-label">Conversations Per Yes</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">0</div>
-          <div class="hero-stat-label">Currently In The Pipeline</div>
+          <div class="hero-stat-num">Manual</div>
+          <div class="hero-stat-label">Outbound Today</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-num">&lt; 7 days</div>
@@ -393,8 +400,8 @@
     <div class="build-grid">
       <div class="build reveal">
         <span class="build-tag">Piece 1 · The Sequence</span>
-        <h4>Targeted investor email sequence <em>that uses Crexie-grade data, not Facebook.</em></h4>
-        <p>A 4–5 step email sequence written in the language of family offices and PE allocators, sent from a deliverability-warmed RedHoek+ inbox. The make-or-break is the targeting layer: <strong>not consumer-grade scrapers, but the same niche real-estate-investor data sources Lauren mentioned on the call</strong> (CoStar / Crexie style, plus PE filings and family-office databases). That is where most marketers fail this brief.</p>
+        <h4>Targeted investor email sequence <em>that uses Crexi-grade data, not Facebook.</em></h4>
+        <p>A 4–5 step email sequence written in the language of family offices and PE allocators, sent from a deliverability-warmed RedHoek+ inbox. The make-or-break is the targeting layer: <strong>not consumer-grade scrapers, but the same niche real-estate-investor data sources Lauren mentioned on the call</strong> (CoStar / Crexi style, plus PE filings and family-office databases). That is where most marketers fail this brief.</p>
         <ul>
           <li><strong>Targeting:</strong> PE shops by alternative-real-estate mandate, family offices by AUM, individuals by liquidity event</li>
           <li><strong>Sequence:</strong> intro + portfolio + Solina case + investor briefing + final ask</li>
@@ -510,9 +517,9 @@
   <div class="container">
     <div class="apply-eyebrow">The next step</div>
     <h2>Book Call 2. <em>Bring the targeting list.</em></h2>
-    <p>This is the missing front-end of your investor funnel, built off the same niche data sources Lauren named on our call (Crexie / CoStar tier, plus PE filings and family-office databases), not consumer scrapers. Karla can grab a 30-minute slot this week. Bring the kinds of PE firms and family offices the first sequence should target. <strong>I will walk through the briefing PDF outline, the email skeleton, and the targeting filter so you can greenlight or kill the build before any commitment.</strong></p>
+    <p>This is the missing front-end of your investor funnel, built off the same niche data sources Lauren named on our call (Crexi / CoStar tier, plus PE filings and family-office databases), not consumer scrapers. Karla can grab a 30-minute slot this week. Bring the kinds of PE firms and family offices the first sequence should target. <strong>I will walk through the briefing PDF outline, the email skeleton, and the targeting filter so you can greenlight or kill the build before any commitment.</strong></p>
     <div class="apply-cta-row">
-      <a href="mailto:info@andreicopy.net?subject=RedHoek%2B%20Call%202%20-%20investor%20acquisition&body=Hey%20Andrei%2C%0A%0AKarla%20here%20on%20behalf%20of%20Lee.%20Booking%20Call%202%20for%20the%20RedHoek%2B%20investor%20acquisition%20build.%20Best%20times%20this%20week%3A%0A%0A%0AInvestor%20targeting%20list%20attached%2Fto%20follow." class="cta-primary">Email Andrei to Book <span class="arrow">→</span></a>
+      <a href="mailto:info@andreicopy.net?cc=karla@redhoek.com&subject=RedHoek%2B%20Call%202%20-%20investor%20acquisition&body=Hey%20Andrei%2C%0A%0AKarla%20copied%20on%20behalf%20of%20Lee.%20Booking%20Call%202%20for%20the%20RedHoek%2B%20investor%20acquisition%20build.%20Best%20times%20this%20week%3A%0A%0A%0AInvestor%20targeting%20list%20attached%2Fto%20follow.%0A%0A(Karla%20%E2%80%94%20please%20replace%20cc%20address%20with%20your%20actual%20email%2C%20this%20is%20a%20placeholder.)" class="cta-primary">Email Andrei + Karla to Book <span class="arrow">→</span></a>
       <a href="https://fathom.video/calls/282058737" target="_blank" rel="noopener" class="cta-secondary">Re-watch our first call</a>
     </div>
     <div class="apply-meta">
