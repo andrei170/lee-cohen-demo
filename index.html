@@ -158,6 +158,29 @@
   .bn p:last-child{margin-bottom:0}
   .bn p strong{color:var(--text-dark);font-weight:600}
 
+  /* BRIEFING PDF MOCK COVER */
+  .briefing-mock{margin:24px 0 8px;display:flex;justify-content:center;perspective:1200px}
+  .briefing-cover{width:240px;aspect-ratio:8.5/11;background:linear-gradient(160deg,var(--noir-deep) 0%,#1a0a08 50%,var(--oxblood-deep) 100%);position:relative;border-radius:3px;box-shadow:0 24px 48px rgba(13,13,13,0.45),0 0 0 1px rgba(91,34,27,0.4);transform:rotateY(-6deg) rotateX(2deg);transform-origin:center center;transition:transform 0.5s cubic-bezier(0.2,0.8,0.2,1);overflow:hidden}
+  .briefing-cover:hover{transform:rotateY(0deg) rotateX(0deg)}
+  .briefing-cover::before{content:'';position:absolute;top:-30%;right:-30%;width:80%;height:80%;background:radial-gradient(circle,rgba(91,34,27,0.55) 0%,transparent 60%);pointer-events:none}
+  .briefing-cover::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--oxblood) 0%,var(--oxblood-deep) 100%);box-shadow:1px 0 2px rgba(0,0,0,0.3) inset}
+  .briefing-content{position:relative;height:100%;padding:24px 22px 22px 28px;display:flex;flex-direction:column;color:var(--cream);z-index:2}
+  .briefing-eyebrow{font-size:8.5px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--oxblood-bright);margin-bottom:auto;padding-top:4px}
+  .briefing-logo{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;letter-spacing:0.04em;color:var(--cream);display:flex;align-items:center;gap:6px}
+  .briefing-logo svg{flex-shrink:0}
+  .briefing-title{font-family:'Playfair Display',serif;font-size:26px;line-height:1.05;font-weight:600;color:var(--cream);margin:30px 0 14px;letter-spacing:-0.01em}
+  .briefing-title em{color:var(--oxblood-bright);font-style:italic}
+  .briefing-subtitle{font-size:10px;line-height:1.5;color:rgba(245,239,232,0.72);font-weight:500;margin-bottom:18px}
+  .briefing-divider{width:36px;height:2px;background:var(--oxblood-bright);margin-bottom:14px}
+  .briefing-toc{font-size:9px;line-height:1.85;color:rgba(245,239,232,0.62);letter-spacing:0.02em}
+  .briefing-toc-item{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:1px dotted rgba(245,239,232,0.15);padding-bottom:2px;margin-bottom:3px}
+  .briefing-toc-num{color:var(--oxblood-bright);font-weight:700}
+  .briefing-toc-title{flex:1;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+  .briefing-toc-page{color:rgba(245,239,232,0.4);font-size:8px}
+  .briefing-foot{margin-top:auto;padding-top:14px;font-size:8px;color:rgba(245,239,232,0.44);letter-spacing:0.16em;text-transform:uppercase;font-weight:600}
+  .briefing-mock-caption{margin-top:14px;text-align:center;font-size:11px;color:var(--text-light);font-style:italic;line-height:1.5}
+  @media(max-width:520px){.briefing-cover{width:200px}.briefing-title{font-size:22px}}
+
   /* WHAT I'D BUILD */
   .build-band{padding:96px 0;background:linear-gradient(180deg,var(--white) 0%,var(--bone) 100%)}
   .build-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1180px;margin:48px auto 0}
@@ -414,6 +437,27 @@
         <span class="build-tag">Piece 2 · The Asset</span>
         <h4>Quarterly investor briefing PDF <em>as the asset that makes piece 1 work.</em></h4>
         <p>A 10–14 page RedHoek+ investor briefing, current portfolio, active raises, market outlook, returns history, designed in your brand. Doubles as the email payload (gives the recipient something concrete to forward up the chain) and the warm-inbound capture on the RedHoek+ site (gated by an investor-accreditation opt-in that routes into the back end you already operate).</p>
+
+        <div class="briefing-mock" aria-label="Investor briefing PDF mock cover">
+          <div class="briefing-cover">
+            <div class="briefing-content">
+              <div class="briefing-eyebrow">RedHoek+ · Q4 2026 Investor Briefing</div>
+              <div class="briefing-title">Boutique Luxury,<br><em>Underwritten.</em></div>
+              <div class="briefing-divider"></div>
+              <div class="briefing-subtitle">Active raises, current portfolio, market outlook for accredited investors evaluating Bay Harbor Islands and Brooklyn allocations.</div>
+              <div class="briefing-toc">
+                <div class="briefing-toc-item"><span class="briefing-toc-num">01</span><span class="briefing-toc-title">Solina Bay Harbor, closing</span><span class="briefing-toc-page">04</span></div>
+                <div class="briefing-toc-item"><span class="briefing-toc-num">02</span><span class="briefing-toc-title">Pool Haus, open</span><span class="briefing-toc-page">06</span></div>
+                <div class="briefing-toc-item"><span class="briefing-toc-num">03</span><span class="briefing-toc-title">Returns history</span><span class="briefing-toc-page">09</span></div>
+                <div class="briefing-toc-item"><span class="briefing-toc-num">04</span><span class="briefing-toc-title">Market outlook 2026</span><span class="briefing-toc-page">11</span></div>
+                <div class="briefing-toc-item"><span class="briefing-toc-num">05</span><span class="briefing-toc-title">Allocation process</span><span class="briefing-toc-page">13</span></div>
+              </div>
+              <div class="briefing-foot">For accredited investors only · Confidential</div>
+            </div>
+          </div>
+        </div>
+        <p class="briefing-mock-caption">Cover concept, designed against your brand at build time. The asset doubles as the cold-email payload and the warm-inbound capture.</p>
+
         <ul>
           <li><strong>Format:</strong> 10–14 page designed PDF, refreshed each quarter</li>
           <li><strong>Capture opt-in:</strong> name, email, accredited yes/no, target check size</li>
